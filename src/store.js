@@ -46,6 +46,7 @@ function movieReducer(state = initialState, action) {
       return {
         ...state,
         isLoading: true,
+        error: "",
       };
     case "movies/starList":
       return {
@@ -69,6 +70,12 @@ function movieReducer(state = initialState, action) {
 
         error: "",
       };
+    case "movies/initial":
+      return {
+        ...state,
+        movies: [],
+        error: "",
+      };
     default:
       return state;
   }
@@ -77,8 +84,7 @@ function movieReducer(state = initialState, action) {
 export function getMovies() {
   return async function (dispatch, getState) {
     const { movie } = getState();
-    // console.log(state);
-    if (movie.query.length < 3) return;
+    if (movie.query.length < 3) return dispatch({ type: "movies/initial" });
     dispatch({ type: "movies/loading" });
     const controller = new AbortController();
 
