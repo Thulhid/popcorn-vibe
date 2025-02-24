@@ -1,44 +1,33 @@
-import { useEffect } from "react";
-import Loader from "./components/Loader";
-import ErrorMessage from "./components/ErrorMessage";
-import Logo from "./components/Logo";
-import Search from "./components/Search";
-import MovieDetails from "./components/MovieDetails";
-import NumResults from "./components/NumResults";
-import MovieBox from "./components/MovieBox";
-import RatedBox from "./components/RatedBox";
-import MovieList from "./components/MovieList";
-import { useDispatch, useSelector } from "react-redux";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AppLayout from "./pages/AppLayout";
+import HomePage from "./pages/HomePage";
+import Login from "./pages/Login";
+import Product from "./pages/Product";
+import PageNotFound from "./pages/PageNotFound";
+import About from "./pages/About";
+import { AuthorProvider } from "./contexts/FakeAuthorContext";
+import ProtectedRoute from "./pages/ProtectedRoute";
 
 export default function App() {
-  const { isLoading, error, selectedId, starList } = useSelector(
-    (store) => store.movie
-  );
-
-  useEffect(
-    function () {
-      localStorage.setItem("starred", JSON.stringify(starList));
-    },
-    [starList]
-  );
-
   return (
-    <div className="container">
-      <nav className="nav-bar">
-        <Logo />
-        <Search />
-        <NumResults />
-      </nav>
-      <main className="main">
-        {!isLoading && !error ? (
-          <MovieBox> {selectedId ? <MovieDetails /> : <MovieList />}</MovieBox>
-        ) : error ? (
-          <ErrorMessage />
-        ) : (
-          <Loader />
-        )}
-        <RatedBox />
-      </main>
-    </div>
+    <AuthorProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<HomePage />} />
+          <Route
+            path="app"
+            element={
+              <ProtectedRoute>
+                <AppLayout />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="login" element={<Login />} />
+          <Route path="product" element={<Product />} />
+          <Route path="about" element={<About />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthorProvider>
   );
 }

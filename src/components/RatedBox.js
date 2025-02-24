@@ -1,14 +1,14 @@
 import { useSelector } from "react-redux";
 import RatedMovie from "./RatedMovie";
-
+import styles from "./RatedBox.module.css";
 export default function RatedBox() {
   const { starList } = useSelector((store) => store.movie);
   return (
-    <section className="rated-box">
-      <div className="summary">
+    <section className={styles.ratedBox}>
+      <div className={styles.summary}>
         <h2>🌟Star Box</h2>
       </div>
-      <ul className="rated-list">
+      <ul className={styles.ratedList}>
         {starList?.map((movie) => (
           <RatedMovie movie={movie} key={movie.imdbID} />
         ))}

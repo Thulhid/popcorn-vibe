@@ -1,0 +1,29 @@
+.about {
+  position: relative;
+  height: calc(100vh - 1rem);
+  background-attachment: fixed;
+  background-image: linear-gradient(
+      rgba(18, 44, 61, 0.5),
+      rgba(16, 39, 55, 0.2)
+    ),
+    url("../../public/bg_about.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.txtContainer {
+  position: absolute;
+  left: 19rem;
+  top: 2rem;
+  padding: 2rem;
+  color: #adadae;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.406);
+  border-radius: 1rem;
+  width: 30rem;
+  gap: 2rem;
+  margin-top: 3rem;
+  font-family: "Courier New", Courier, monospace;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+}

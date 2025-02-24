@@ -1,0 +1,9 @@
+.numResults {
+  align-self: center;
+  justify-self: center;
+  font-size: medium;
+  font-weight: 100;
+}
+.numResults span {
+  color: red;
+}

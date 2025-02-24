@@ -1,0 +1,25 @@
+.movieList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 2 columns per row */
+  gap: 2rem;
+  padding: 1rem;
+  list-style-type: none;
+}
+
+.movieList li {
+  position: relative;
+
+  column-gap: 2.4rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+.movieList img {
+  width: 60%;
+  grid-row: 1 / -1;
+}
+
+.movieList div {
+  color: #dee2e6;
+  grid-column: 1/ 2;
+}

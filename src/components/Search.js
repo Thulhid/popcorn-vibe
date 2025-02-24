@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { getMovies, searchMovies } from "../store";
 import { useEffect } from "react";
-
+import styles from "./Search.module.css";
 export default function Search() {
   const { query } = useSelector((store) => store.movie);
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ export default function Search() {
     <input
       type="text"
       placeholder="Search..."
-      className="search"
+      className={styles.search}
       value={query}
       onChange={(e) => dispatch(searchMovies(e.target.value))}
     />

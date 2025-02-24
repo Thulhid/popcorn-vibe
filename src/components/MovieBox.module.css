@@ -1,0 +1,8 @@
+.movieBox {
+  background-color: #343a40;
+  overflow: scroll;
+  border-radius: 0.5rem;
+}
+.movieBox::-webkit-scrollbar {
+  display: none;
+}

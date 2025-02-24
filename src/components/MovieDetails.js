@@ -3,7 +3,7 @@ import StarRating from "./StarRating";
 import Loader from "./Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { addStarList, selectId } from "../store";
-
+import styles from "./MovieDetails.module.css";
 export default function MovieDetails() {
   const { selectedId, starList, movieDetails, isLoading } = useSelector(
     (store) => store.movie
@@ -37,20 +37,25 @@ export default function MovieDetails() {
   return isLoading ? (
     <Loader />
   ) : (
-    <div className="details">
+    <div className={styles.details}>
       <header>
-        <button className="btn-back" onClick={() => dispatch(selectId(null))}>
+        <button
+          className={styles.btnBack}
+          onClick={() => dispatch(selectId(null))}
+        >
           &larr;
         </button>
         <h1>{title}</h1>
         <p>{year}</p>
         <p>{genre}</p>
       </header>
-      <section className="details-star">
+      <section className={styles.detailsStar}>
         {isSelected ? (
-          <p className="already-rated">You already rated this movie</p>
+          <p className={styles.alreadyRated}>You already rated this movie</p>
         ) : (
-          <div className={`rating ${userRating ? "expanded" : ""}`}>
+          <div
+            className={`${styles.rating} ${userRating ? styles.expanded : ""}`}
+          >
             <StarRating
               size={24}
               messages={["Terrible", "Bad", "Okay", "Good", "Amazing"]}
@@ -60,23 +65,23 @@ export default function MovieDetails() {
         )}
         {userRating > 0 && (
           <button
-            className="btn-add"
+            className={styles.btnAdd}
             onClick={(e) => dispatch(addStarList(newRatedMovie))}
           >
             Add to ⭐⭐⭐
           </button>
         )}
       </section>
-      <section className="details-body">
+      <section className={styles.detailsBody}>
         <img src={poster} alt={`Poster of ${title}  movie`} />
-        <div className="details-body-info">
+        <div className={styles.detailsBodyInfo}>
           <p>⭐ {imdbRating}</p>
           <p>Director: {director}</p>
           <p>Top cast: {actors}</p>
           <p>{released}</p>
           <p>{runtime}</p>
           <h2>Plot summary</h2>
-          <p className="plot">&bull; {plot}</p>
+          <p>&bull; {plot}</p>
         </div>
       </section>
     </div>

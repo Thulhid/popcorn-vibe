@@ -1,0 +1,25 @@
+.ratedBox {
+  background-color: #00c46a;
+  border-radius: 0.9rem;
+  overflow: scroll;
+}
+.ratedBox::-webkit-scrollbar {
+  display: none;
+}
+.summary {
+  position: sticky;
+  top: 0;
+  padding: 0.7rem;
+  font-size: small;
+  border-radius: 0.9rem;
+  background-color: #00c46a;
+  box-shadow: 0 2rem 1rem #2c291e9b;
+}
+
+.summary div {
+  display: flex;
+  align-items: center;
+}
+.ratedList {
+  list-style-type: none;
+}

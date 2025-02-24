@@ -1,0 +1,36 @@
+.ratedListItem {
+  position: relative;
+  display: flex;
+  gap: 0.7rem;
+  margin: 1rem 0;
+  background-color: #00c46a;
+  box-shadow: 0 1rem 2rem #111514;
+}
+
+.ratedListItem img {
+  width: 4.5rem;
+}
+.ratedListItemBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.ratedListItemBody p {
+  font-size: small;
+}
+.btnDelete {
+  position: absolute;
+  right: 0.3rem;
+  top: 0.2rem;
+
+  height: 1rem;
+  aspect-ratio: 1;
+  border-radius: 20%;
+  border: none;
+  background-color: #212529;
+  color: #fa5252;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}

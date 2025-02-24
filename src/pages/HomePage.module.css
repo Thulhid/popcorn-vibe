@@ -1,0 +1,48 @@
+.homepage {
+  position: relative;
+
+  height: calc(100vh - 1rem);
+  background-attachment: fixed;
+  background-image: linear-gradient(
+      rgba(18, 44, 61, 0.5),
+      rgba(16, 39, 55, 0.2)
+    ),
+    url("../../public/bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.txtContainer {
+  position: absolute;
+  right: 16rem;
+  top: 10rem;
+  padding: 2rem;
+  color: #adadae;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.406);
+  border-radius: 1rem;
+  width: 30rem;
+  gap: 2rem;
+  margin-top: 3rem;
+  font-size: 0.7rem;
+  font-family: "Courier New", Courier, monospace;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+}
+.startLink {
+  position: absolute;
+  bottom: 6rem;
+  right: 30rem;
+  background-color: #00c46a;
+  width: 10rem;
+  padding: 0.7rem;
+  text-align: center;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem #111514;
+  text-decoration: none;
+  color: #111514;
+  transition: filter 0.4s ease-in-out, transform 0.6s ease-in-out;
+}
+.startLink:hover {
+  filter: brightness(1.3); /* Makes it 30% brighter */
+  transform: scale(1.02); /* Slight zoom effect */
+}
