@@ -2,7 +2,7 @@ import { useState } from "react";
 import StarRating from "./StarRating";
 import Loader from "./Loader";
 import { useDispatch, useSelector } from "react-redux";
-import { addStarList, selectId } from "../store";
+import { addStarList, selectID, selectId } from "../store";
 import styles from "./MovieDetails.module.css";
 export default function MovieDetails() {
   const { selectedId, starList, movieDetails, isLoading } = useSelector(
@@ -41,7 +41,7 @@ export default function MovieDetails() {
       <header>
         <button
           className={styles.btnBack}
-          onClick={() => dispatch(selectId(null))}
+          onClick={() => dispatch(selectID(null))}
         >
           &larr;
         </button>
