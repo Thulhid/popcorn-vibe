@@ -2,7 +2,8 @@
   align-self: center;
   justify-self: center;
   font-size: medium;
-  font-weight: 100;
+  font-weight: 400;
+  cursor: default;
 }
 .numResults span {
   color: red;

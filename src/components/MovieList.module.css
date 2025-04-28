@@ -26,7 +26,12 @@
 .initialMsg {
   color: #dee2e6;
   text-align: center;
+  margin: auto;
   margin-top: 5rem;
+  padding: 0.2rem;
+  border-radius: 0.5rem;
   font-size: larger;
   font-weight: 600;
+  width: fit-content;
+  cursor: default;
 }

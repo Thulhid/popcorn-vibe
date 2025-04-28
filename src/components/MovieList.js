@@ -7,7 +7,7 @@ export default function MovieList() {
     <>
       {query.length <= 2 ? (
         <p className={styles.initialMsg}>
-          Start searching for movies you love 🔍
+          Start searching for movies you love ✨
         </p>
       ) : (
         <ul className={styles.movieList}>
